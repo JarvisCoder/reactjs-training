@@ -4,7 +4,8 @@ import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import MessageList from './MessageList.jsx';
-
+import ChannelList from './ChannelList.jsx';
+import MessageBox from './MessageBox.jsx';
 
 class App extends React.Component {
 	
@@ -20,9 +21,18 @@ class App extends React.Component {
 		return  (
 			<div>
 				<AppBar title="Chat Application"/>
-				<MessageList />
+				<div style={{
+					display: 'flex',
+					flexFlow: 'row wrap',
+					maxWidth: 1200,
+					width: '100%',
+					margin: '30px auto 30px'
+				}}>
+					<ChannelList />
+					<MessageList />
+				</div>
+				<MessageBox />
 			</div>
-			
 		);
 	}
 

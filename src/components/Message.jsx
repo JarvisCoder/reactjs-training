@@ -1,5 +1,8 @@
 import React from 'react';
 
+import ListItem from 'material-ui/List/ListItem';
+import Avatar from 'material-ui/Avatar';
+
 class Message extends React.Component {
 
 	constructor(props) {
@@ -8,7 +11,13 @@ class Message extends React.Component {
 
 	render() {
 		return (
-			<div>{this.props.chatMsg}</div>
+			<ListItem
+				leftAvatar={
+					<Avatar src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAVrAAAAJGRiNTI0ODFmLTcyZjEtNGUxNS1hMzZmLTQ4NmViMjNiYjMyZA.jpg" />
+				}
+			>
+				{this.props.chatMsg}
+			</ListItem>
 		);
 	}
 }

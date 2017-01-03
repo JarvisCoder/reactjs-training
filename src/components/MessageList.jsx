@@ -1,6 +1,9 @@
 import React from 'react';
 import Message from './Message.jsx';
 
+import Card from 'material-ui/Card';
+import List from 'material-ui/List';
+
 class MessageList extends React.Component {
 
 	constructor(props) {
@@ -17,12 +20,19 @@ class MessageList extends React.Component {
 	render() {
 		var messageNodes = this.state.messages.map((message)=>{
 			return (
-				<Message chatMsg={message}/>
+				<Message key={message.length} chatMsg={message}/>
 			);
 		});
 
 		return  (
-			<div>{messageNodes}</div>
+			<Card style={{
+				flexGrow: 2,
+				marginLeft: 30
+			}}>
+				<List>
+					{messageNodes}
+				</List>
+			</Card>
 		);
 	}
 }
